@@ -26,12 +26,9 @@ export default {
       tabArr: [
         {id: 0, title: '推荐', path: '/vide/Remend'},
         {id: 1, title: '热点', path: '/vide/Popula'},
-        {id: 2, title: '新闻', path: ''},
-        {id: 3, title: '娱乐', path: ''},
-        {id: 4, title: 'Look直播', path: ''},
-        {id: 5, title: '广场', path: ''},
-        {id: 6, title: 'Please', path: ''},
-        {id: 7, title: '朋友圈', path: ''}
+        {id: 2, title: 'Look直播', path: ''},
+        {id: 3, title: 'Please', path: ''},
+        {id: 4, title: '朋友圈', path: ''}
       ]
     }
   },
@@ -56,11 +53,11 @@ export default {
   background: #f8f8f8;
   padding-bottom: 2vh;
   height: 10vh;
+  padding-top: 8px;
 }
 .navsa {
   width:100%;
   box-sizing: border-box;
-  overflow-x: scroll;
   padding: 10px;
   display: flex;
   justify-content: space-around;
@@ -94,10 +91,10 @@ export default {
   line-height: 8vh;
 }
 .shoucha{
-    height: 6vh;
-    line-height: 6vh;
+    height: 5.8vh;
+    line-height: 5.8vh;
 }
 .tuij{
-   margin-top: 12.4vh;
+   margin-top: 13vh;
 }
 </style>

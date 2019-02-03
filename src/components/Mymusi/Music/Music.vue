@@ -56,33 +56,31 @@ export default {
 </script>
 <style>
 .imghzas{
-    width: 8%;
-    margin-left: 15px;
+  width:4vw;
+  margin-left: 15px;
 }
 .imghsaza{
-    box-sizing: border-box;
     display: flex;
     align-items: center;
     background: #fcfcfc;
-
 }
 .bianqian{
-    border-bottom: 1px solid #e3e2e7;
     display: flex;
     align-items:center;
     height:8vh;
     justify-content: space-between;
-    width:80%;
+    width:88%;
     margin-left: 18px;
+    border-bottom: 1px solid #ededef;
 }
 .tesaz{
     width: 100vw;
-    font-size:3vh;
+    font-size:2vh;
 }
 .bianqians{
     width:100vw;
     color: #969799;
-    font-size:20px;
+    font-size:14px;
     text-align: right;
     margin-right:5px;
 }

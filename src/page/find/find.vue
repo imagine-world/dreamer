@@ -42,20 +42,19 @@ export default {
 </script>
 <style>
 .zhans {
-  margin-top: 14.5vh;
-  padding-top: 0.5vh;
+  margin-top: 13vh;
 }
 .shousuo {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #f2f2f2;
+  background: #f8f8f8;
   padding-bottom: 2vh;
-  height: 13vh;
+  height: 11vh;
 }
 .nav {
   width: 50vw;
-  margin: 14px auto;
+  margin: 2px auto;
   display: flex;
   justify-content: space-around;
   font-size: 2vh;
@@ -81,8 +80,8 @@ export default {
   border-radius: 15px;
   transition: all 1s;
 }
-.sas {
+.sas{
   height: 8vh;
-  line-height: 8vh;
+  line-height: 8vh
 }
 </style>

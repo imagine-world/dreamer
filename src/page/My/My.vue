@@ -1,23 +1,31 @@
 <template>
-  <div style="height:700px">
+  <div>
     <div class="yumz">
-      <img :src="imgseaz" alt class="imhsazs">
+      <img class="imhsazs" :src="imgseaz" alt >
       <div class="yinha">我的音乐</div>
-      <img :src="imgsassz" alt class="imhsazs">
+      <img class="imshazsa" :src="imgsassz" alt>
     </div>
-    <Music class="muusa"/>
+     <Music class="muusa"/>
+     <Creaong/>
+     <Eollecgs/>
+     <frame/>
   </div>
 </template>
 <script>
 import Music from '../../components/Mymusi/Music/Music'
+import Creaong from '../../components/Mymusi/Creaong/Creaong'
+import Eollecgs from '../../components/Mymusi/Eollecgs/Eollecgs'
 export default {
+  name: 'Tabbaz',
   components: {
-    Music
+    Music,
+    Creaong,
+    Eollecgs
   },
   data () {
     return {
       imgseaz: require('../../img/3a8c5dee3ece4c3a01a67d5c5adeyun.png'),
-      imgsassz: require('../../img/61ecf7fc80fadb2d77b05e7dc813dc.png')
+      imgsassz: require('../../img/3a8c5dee3ece4c3a01a67d5c5ade110a.png')
     }
   },
   methods: {}
@@ -25,8 +33,6 @@ export default {
 </script>
 <style>
 .yumz{
-  position: fixed;
-  top: 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -35,14 +41,17 @@ export default {
   box-sizing: border-box;
   background: #f8f8f8;
 }
-.imhsazs {
-  width: 10%;
+.imhsazs{
+   width: 4.6%;
+  vertical-align: middle;
+}
+.imshazsa{
+  width: 4.6%;
+  vertical-align: middle;
 }
 .yinha{
-  width: 80%;
+  width: 78%;
   text-align: center;
 }
-.muusa{
-  margin-top: 8vh;
-}
+
 </style>

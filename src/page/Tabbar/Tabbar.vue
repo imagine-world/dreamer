@@ -97,6 +97,7 @@ export default {
   align-items: center;
   cursor: pointer;
   position: relative;
+  font-size: 12px;
 }
 .tab-bas > span {
   margin-top: 5px;

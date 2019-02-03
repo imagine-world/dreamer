@@ -1,16 +1,12 @@
 <template>
   <div>
-    <div class="shzas">
-      <div>
-        <img class="imghza" :src="imgs" alt/>
+    <div class="shzazs">
+      <div class="shzas_a"><img class="imghzaq" :src="imgs" alt=""></div>
+      <div class="shzas_b">
+      <div><img class="shouchas" :src="imgsasou" alt=""></div>
+      <div>Shape oY</div>
       </div>
-      <div class="shouzas">
-        <img :src="imgsasou" alt class="shousa">
-        <span>给你推荐 For Him.</span>
-      </div>
-      <div>
-        <img class="imghza" :src="imgse" alt/>
-      </div>
+      <div class="shzas_c"><img class="imghzaq" :src="imgse" alt=""></div>
     </div>
   </div>
 </template>
@@ -27,31 +23,39 @@ export default {
 }
 </script>
 <style>
-.shzas {
+.shzazs {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content:space-between;
   width: 100%;
+  text-align: center;
+  padding-top: 2px;
 }
-.imghza {
+.shzas_a{
+  width: 15%;
+}
+.shzas_b{
   width: 50%;
-  vertical-align: middle;
-}
-.shouzas {
-  width: 60%;
   height: 4.5vh;
+  background: #ececee;
+  border-radius: 20px;
+  line-height: 4.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ebebed;
-  border-radius: 40px;
-  color: #bcbcbc;
-  font-size: 2vh;
-  margin-left: -1.4%;
+  font-size: 14px;
+  color: #bdbdbf;
 }
-.shousa {
+.shzas_c{
+  width: 15%;
+}
+.imghzaq{
+  width: 3.8vw;
+  vertical-align: middle;
+}
+.shouchas{
+  width:3vw;
   margin-right: 10px;
-  width: 8%;
   vertical-align: middle;
 }
 </style>

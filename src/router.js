@@ -10,6 +10,8 @@ import Anchor from './components/Discovery/Anchor/Anchor'
 import Personality from './components/Discovery/Personality/Personality'
 import Remend from './components/Videoarea/Remend/Remend'
 import Popula from './components/Videoarea/Popula/Popula'
+import dynam from './components/Frienge/dynam/dynam'
+import nearby from './components/Frienge/nearby/nearby'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
@@ -57,7 +59,20 @@ export default new Router({
     {
       path: '/Friend',
       name: '朋友',
-      component: Friend
+      component: Friend,
+      children: [
+        {
+          path: '/Friend/dynam',
+          name: '动态',
+          component: dynam
+        },
+        {
+          path: '/Friend/nearby',
+          name: '附近',
+          component: nearby
+        }
+      ],
+      redirect: 'Friend/dynam'
     },
     {
       path: '/Account',
