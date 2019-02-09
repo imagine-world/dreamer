@@ -1,10 +1,10 @@
 <template>
-    <div class="_popula">
-        热门
+    <div class="_look">
+        look直播
     </div>
 </template>
 <style scoped>
-._popula{
+._look{
     width: 100%;
     height: 100%;
 }

@@ -27,11 +27,11 @@ export default new Router({
       component: find,
       children: [{
         path: '/find/Anchor',
-        name: '个性推荐',
+        name: '主播电台',
         component: Anchor
       }, {
         path: '/find/Personality',
-        name: '主播电台',
+        name: '个性推荐',
         component: Personality
       }],
       redirect: 'find/Anchor'
