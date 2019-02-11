@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="zhans" ref="scrollView">
-      <div class="routerViewClass" :style="clientWidth">
+      <div class="routerViewClass" :style="clientWidth + 'left:' + position + 'px;'">
         <broadcast/>
         <Look/>
         <Popular/>
@@ -44,8 +44,10 @@ export default {
       startClient: 0,
       startTime: 0,
       endTime: 0,
-      scrollX: 0,
-      clientWidth: 0
+      scrollX: 414,
+      clientWidth: '',
+      position: 0,
+      memorySliding: 0
     }
   },
   mounted () {
@@ -57,17 +59,19 @@ export default {
       startTime: 'startTime', // 用户开始点击屏幕开始的时间
       endTime: 'endTime', // 用户开始点击屏幕结束的时间
       scrollX: 'scrollX', // scroll的偏移量
-      index: 'isSelected'
+      index: 'isSelected',
+      posi: 'position' // 移动距离
     })
     //  console.log(this.$router.options.routes)
   },
   methods: {
-    _initDomEvent ({scrollWidth, tabArr, screenWidth, startClient, startTime, endTime, scrollX, index}) {
+    _initDomEvent ({scrollWidth, tabArr, screenWidth, startClient, startTime, endTime, scrollX, index, posi}) {
       this[scrollWidth] = 'width:' + (this.$refs[screenWidth].clientWidth * this[tabArr].length) + 'px;'
       let that = this
       let halfWidth = Math.ceil(this.$refs[screenWidth].clientWidth / 2)
       this.$refs[screenWidth].addEventListener('touchstart', function (e) {
         that[startClient] = e.changedTouches[0].clientX
+        that.memorySliding = e.changedTouches[0].clientX
         that[startTime] = new Date().valueOf()
       }, false)
       this.$refs[screenWidth].addEventListener('touchend', function (e) {
@@ -93,7 +97,10 @@ export default {
             }
           }
           that[scrollX] = that.$refs[screenWidth].clientWidth * that[index]
-          that.$refs[screenWidth].scroll(that[scrollX], 0)
+          // that.$refs[screenWidth].scroll(that[scrollX], 0)
+          // that.$refs[screenWidth].
+          that[posi] = -that[scrollX]
+          console.log(that[posi], abs)
         } else if (resTime < 300 && abs > that.$refs[screenWidth].clientWidth * 0.15) {
           console.log(' else if ', that.$refs[screenWidth].clientWidth * 0.15)
           if (judge > 0) {
@@ -111,19 +118,30 @@ export default {
             }
           }
           that[scrollX] = that.$refs[screenWidth].clientWidth * that[index]
-          that.$refs[screenWidth].scroll(that[scrollX], 0)
+          // that.$refs[screenWidth].scroll(that[scrollX], 0)
+          that[posi] = -that[scrollX]
         } else {
-          that.$refs[screenWidth].scroll(that[scrollX], 0)
+          that[posi] = -that[scrollX]
+          // that.$refs[screenWidth].scroll(that[scrollX], 0)
         }
+      }, false)
+      this.$refs[screenWidth].addEventListener('touchmove', function (e) {
+        let moveDistance = e.changedTouches[0].clientX - that.memorySliding
+        // console.log(e, 'in', that.memorySliding, moveDistance, that.scrollX)
+        // that.position = that.position + moveDistance - that.scrollX
+        that.position += moveDistance
+        console.log(e.changedTouches[0].clientX, that.memorySliding, moveDistance)
+        that.memorySliding = e.changedTouches[0].clientX
       }, false)
     },
     tabasr (index) {
       this.isSelected = index
       this.scrollX = this.$refs.scrollView.clientWidth * index
-      this.$refs.scrollView.scroll(this.scrollX, 0)
+      // this.$refs.scrollView.scroll(this.scrollX, 0)
+      this.position = -this.scrollX
     },
     _tabNavigationScrolled (selectedIndex, tabNavigationArr, clientWidth, tabNavigationScroll) {
-      console.log(selectedIndex, this[tabNavigationArr].length, this.$refs[clientWidth].clientWidth, this.$refs[tabNavigationScroll].scrollWidth)
+      // console.log(selectedIndex, this[tabNavigationArr].length, this.$refs[clientWidth].clientWidth, this.$refs[tabNavigationScroll].scrollWidth)
       let _tabW = this.$refs[tabNavigationScroll].scrollWidth // 选项卡tab的总宽度
       let _clientW = this.$refs[clientWidth].clientWidth // 目前屏幕的宽度
       let _index = selectedIndex // 用户选择的tab
@@ -189,12 +207,15 @@ export default {
 .zhans{
   margin-top:.18rem;
   height: 100%;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
+  position: relative;
+  /* overflow-x: scroll; */
+  /* scroll-behavior: smooth; */
   }
 .routerViewClass{
   height: 100%;
   display: flex;
+  position: absolute;
+  top: 0px;
 }
 #homePageTouch{
     height:12500px;
