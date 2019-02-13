@@ -15,6 +15,7 @@
         <square/>
         <sceneg/>
         <coverup/>
+        <hererup/>
         <MV/>
         <acgyin/>
         <playing/>
@@ -67,7 +68,7 @@ export default {
       startClient: 0,
       startTime: 0,
       endTime: 0,
-      scrollX: 414,
+      scrollX: 360,
       clientWidth: '',
       position: 0,
       memorySliding: 0
@@ -123,9 +124,10 @@ export default {
           // that.$refs[screenWidth].scroll(that[scrollX], 0)
           // that.$refs[screenWidth].
           that[posi] = -that[scrollX]
-          console.log(that[posi], abs)
+          // console.log(that[posi], abs)
         } else if (resTime < 300 && abs > that.$refs[screenWidth].clientWidth * 0.15) {
-          console.log(' else if ', that.$refs[screenWidth].clientWidth * 0.15)
+          console.log('else if')
+          // console.log(' else if ', that.$refs[screenWidth].clientWidth * 0.15)
           if (judge > 0) {
             if (that[index] < that[tabArr].length - 1) {
               that[index] = that[index] + 1
@@ -153,7 +155,7 @@ export default {
         // console.log(e, 'in', that.memorySliding, moveDistance, that.scrollX)
         // that.position = that.position + moveDistance - that.scrollX
         that.position += moveDistance
-        console.log(e.changedTouches[0].clientX, that.memorySliding, moveDistance)
+        // console.log(e.changedTouches[0].clientX, that.memorySliding, moveDistance)
         that.memorySliding = e.changedTouches[0].clientX
       }, false)
     },
