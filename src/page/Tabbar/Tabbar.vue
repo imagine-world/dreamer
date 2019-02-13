@@ -46,10 +46,10 @@ export default {
           id: 3,
           normal: require('../../assets/img/3a8c5dee3ece4c3a01a67d5c5ade113.png'),
           selected: require('../../assets/img/6598234130921e12be8172535a09739.png'),
-          tshL: 0
+          tshL: 1
         },
         {
-          tshL: 1,
+          tshL: 0,
           path: '/Account',
           texts: '账号',
           id: 4,
@@ -74,7 +74,7 @@ export default {
 .box {
   width: 100%;
   height: 1.70rem;
-  background: #e0dedf;
+  background: #f5f5f5;
   position: fixed;
   bottom: 0;
   display: flex;
@@ -108,15 +108,15 @@ export default {
   color: #959796 !important;
 }
 .xiao {
-  font-size: .3rem;
-  line-height: .4rem;
+  font-size: .2rem;
+  line-height: .3rem;
   position: absolute;
-  top: -.15rem;
-  right: .600rem;
+  top: -.1rem;
+  right: .450rem;
   font-style: normal;
   display: block;
-  width:.4rem;
-  height:.4rem;
+  width:.3rem;
+  height:.3rem;
   background: red;
   border-radius: 1rem;
   color: white;

@@ -13,6 +13,11 @@
         <Popular/>
         <Remend/>
         <square/>
+        <sceneg/>
+        <coverup/>
+        <MV/>
+        <acgyin/>
+        <playing/>
       </div>
     </div>
   </div>
@@ -23,23 +28,41 @@ import Look from '../../components/video/Look.vue'
 import Popular from '../../components/video/Popular.vue'
 import Remend from '../../components/video/Remend.vue'
 import square from '../../components/video/square.vue'
+import sceneg from '../../components/video/sceneg.vue'
+import coverup from '../../components/video/coverup.vue'
+import hererup from '../../components/video/hererup.vue'
+import MV from '../../components/video/MV.vue'
+import acgyin from '../../components/video/acgyin.vue'
+import playing from '../../components/video/playing.vue'
 export default {
   components: {
     broadcast,
     Look,
     Popular,
     Remend,
-    square
+    square,
+    sceneg,
+    coverup,
+    hererup,
+    MV,
+    acgyin,
+    playing
   },
   data () {
     return {
       isSelected: 0,
       list: [
         {id: 0, title: '推荐'},
-        {id: 1, title: '朋友圈'},
-        {id: 2, title: '直播'},
-        {id: 3, title: 'Look直播'},
-        {id: 4, title: '朋友圈'}
+        {id: 1, title: 'Look直播'},
+        {id: 2, title: '广场'},
+        {id: 3, title: '21 Guns'},
+        {id: 4, title: '听歌轨迹'},
+        {id: 5, title: '现场'},
+        {id: 6, title: '翻唱'},
+        {id: 7, title: '听BGM'},
+        {id: 8, title: 'MV'},
+        {id: 9, title: 'ACG音乐'},
+        {id: 10, title: '演奏'}
       ],
       startClient: 0,
       startTime: 0,
@@ -162,15 +185,6 @@ export default {
 }
 </script>
 <style scoped>
-/* neo */
-._personality{
-  width: 100%;
-  height: 100%;
-}
-._anchor{
-  width: 100%;
-  height: 100%;
-}
 .navsa {
   overflow: scroll;
   box-sizing: border-box;
@@ -179,9 +193,10 @@ export default {
   display: -webkit-box;
   cursor: pointer;
   scroll-behavior: smooth;
-  font-size: 0.4rem;
-  padding: .28rem .5rem;
-  margin-top: .3rem;
+  font-size: 0.45rem;
+  padding: .28rem .4rem;
+  margin-top: .22rem;
+  margin-right: .2rem;
 }
 .nav-item {
   color: #343436;
