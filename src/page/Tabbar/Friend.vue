@@ -1,11 +1,14 @@
 <template>
-    <div>
-       1
-    </div>
+  <div>
+    <navpenyou/>
+  </div>
 </template>
 <script>
+import navpenyou from '../../components/pengyou/navpenyou.vue'
 export default {
   name: 'pengyou',
-  components: {}
+  components: {
+    navpenyou
+  }
 }
 </script>

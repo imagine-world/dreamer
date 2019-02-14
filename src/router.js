@@ -33,7 +33,21 @@ export default new Router({
     {
       path: '/Friend',
       name: '朋友',
-      component: Friend
+      component: Friend,
+      children: [
+        {
+          path: '/Friend/dynamic',
+          name: 'dynamic',
+          component: () => import('./components/pengyou/dynamic.vue')
+        },
+
+        {
+          path: '/Friend/nearby',
+          name: 'nearby',
+          component: () => import('./components/pengyou/nearby.vue')
+        }
+      ],
+      redirect: 'Friend/dynamic'
     },
     {
       path: '/Account',

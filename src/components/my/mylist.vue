@@ -52,8 +52,7 @@ export default {
           id: 4,
           imgs: require('../../assets/img/3a8c5dee3ece4c3a01a67d5c5adeyues.png'),
           imgavbz: require('../../assets/img/jaintous.png'),
-          thies: 'Sati 空间',
-          xiao: 100
+          thies: 'Sati 空间'
         }
       ]
     }
@@ -85,18 +84,21 @@ export default {
     border-bottom: none;
 }
 .imghzas{
-    height: .8rem;
+    height: .6rem;
     margin-right: .6rem;
     margin-left: .2rem;
 }
 .imhgzas{
-    width: .5rem;
-    height: .6rem;
+    width: .4rem;
+    height: .4rem;
 }
 .item-left{
     flex: 1;
 }
 .item-right{
     margin: 0 .2rem;
+}
+.bianqians{
+  font-size: .38rem;
 }
 </style>
