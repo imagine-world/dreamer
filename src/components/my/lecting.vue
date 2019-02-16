@@ -8,12 +8,12 @@
       <div class="lecting-left">
         <div class="lecting-left-texr">我收藏的歌单 (2)</div>
       </div>
-      <div  @click.stop="dianz" class="diandain">
+      <div @click.stop="dianz" class="diandain">
         <img :src="imhza" class="ihjya">
       </div>
     </div>
     <songlist v-show="is_show" />
-    <Elastic :is_takan='is_takan' v-show="is_takan" />      <!-- 弹框组件 -->
+    <Elastic :is_takan='is_takan' v-show="is_takan" v-on:childClick="chileEvent($event)"/>      <!-- 弹框组件 -->
   </div>
 </template>
 <script>
@@ -41,6 +41,10 @@ export default {
     },
     dianz () {
       this.is_takan = !this.is_takan
+    },
+    chileEvent (msg) {
+      this.is_takan = msg
+      console.log(msg)
     }
   }
 }

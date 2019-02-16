@@ -1,8 +1,8 @@
 <template>
   <div class="navmy">
-        <div class="nav-leght"><img :src="imgheaez" alt=""></div>
-        <div class="centrea">我的音乐</div>
-        <div class="nav-right"><img :src="imgheyua" alt=""></div>
+    <div class="nav-leght"><img :src="imgheaez" alt=""></div>
+    <div class="centrea">我的音乐</div>
+    <div class="nav-right"><img :src="imgheyua" alt=""></div>
   </div>
 </template>
 <script>

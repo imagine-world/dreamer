@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div class="mask" v-show="is_takan" @click="tankuan()"></div>
-    <div class="tnakuan" v-show="is_takan">弹框内容2</div>
+    <div class="mask" v-show="$store.state.is_takan" @click="tankuan()"></div>
+    <div class="tnakuan" v-show="$store.state.is_takan">弹框内容2</div>
     <!-- 弹框 -->
   </div>
 </template>
 <script>
 export default {
-  props: ['is_takan'],
+  // props: ['is_takan'],
   data () {
     return {}
   },
@@ -15,7 +15,8 @@ export default {
   },
   methods: {
     tankuan () {
-      this.is_takan = false
+      this.$store.commit('CONTROL_PLAYLIST', false)
+      // this.is_takan = false
     }
   }
 }

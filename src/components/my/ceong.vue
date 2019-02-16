@@ -3,17 +3,17 @@
     <div class="lecting" @click="btnaz">
       <div class="tupian">
         <img :src="imgsac" class="left-img" v-if="is_imgs">
-         <img :src="imgsassz" class="left-imgs" v-else>
+        <img :src="imgsassz" class="left-imgs" v-else>
       </div>
       <div class="lecting-left">
         <div class="lecting-left-texr">我创建的歌单 (2)</div>
       </div>
-      <div  @click.stop="dianz" class="diandain">
+      <div @click.stop="dianz" class="diandain">
         <img :src="imhza" class="ihjya">
       </div>
     </div>
     <yoection v-show="is_show"/>
-    <lastic  :is_takan='is_takan' v-show="is_takan"/>  <!-- 弹框组件 -->
+    <lastic v-show="$store.state.is_takan"/>  <!-- 弹框组件 -->
   </div>
 </template>
 <script>
@@ -26,7 +26,7 @@ export default {
   },
   data () {
     return {
-      is_takan: false,
+      // is_takan: false,
       is_show: false,
       is_imgs: true,
       imhza: require('../../assets/img/3a8c5dee3ece4c3a01a67d5c5ade110az.png'),
@@ -40,7 +40,8 @@ export default {
       this.is_imgs = !this.is_imgs
     },
     dianz () {
-      this.is_takan = !this.is_takan
+      this.$store.commit('CONTROL_PLAYLIST', !this.$store.state.is_takan)
+      // this.is_takan = !this.is_takan
     },
     tankzas () {
       this.is_takan = false

@@ -15,7 +15,8 @@ export default {
   },
   methods: {
     tankuan () {
-      this.is_takan = false
+      this.$emit('childClick', false)
+      // this.is_takan = false
     }
   }
 }

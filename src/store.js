@@ -8,7 +8,10 @@ export default new Vuex.Store({
     is_takan: false
   },
   mutations: {
-
+    CONTROL_PLAYLIST (state, type) {
+      console.log('in', state, type)
+      state.is_takan = type
+    }
   },
   actions: {
 
