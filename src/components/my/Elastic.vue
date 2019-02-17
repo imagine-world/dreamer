@@ -1,22 +1,35 @@
 <template>
   <div>
     <div class="mask" v-show="is_takan" @click="tankuan()"></div>
-    <div class="tnakuan" v-show="is_takan">弹框内容1</div>
+    <div class="tnakuan" v-show="is_takan">弹框内容1 {{ hi }}</div>
     <!-- 弹框 -->
   </div>
 </template>
 <script>
+import { mapState, mapMutations } from 'vuex'
 export default {
+  components: {
+  },
   props: ['is_takan'],
+  ...mapMutations(['CONTROL_PLAYLIST']),
   data () {
-    return {}
+    return {
+      localCount: 'dsa'
+    }
   },
-  computed: {
+  mounted () {
   },
+  computed: mapState({
+    // 箭头函数可使代码更简练
+    hi: state => {
+      console.log(state)
+      return state.hi
+    }
+  }),
   methods: {
     tankuan () {
       this.$emit('childClick', false)
-      // this.is_takan = false
+      this.$store.state.hi = 'false'
     }
   }
 }

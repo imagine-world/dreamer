@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    is_takan: false
+    is_takan: false,
+    hi: false
   },
   mutations: {
     CONTROL_PLAYLIST (state, type) {
