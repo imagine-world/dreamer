@@ -61,7 +61,7 @@ export default {
 .certg {
   flex: 4;
   border-radius: 1rem;
-  border: 0.0125rem solid #b3b6bd;
+  border: 0.0155rem solid #b3b6bd;
   text-align: center;
   font-size: 0.4rem;
   color: #616161;

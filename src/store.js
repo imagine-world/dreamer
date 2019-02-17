@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     CONTROL_PLAYLIST (state, type) {
-      console.log('in', state, type)
+      console.log('in', type)
       state.is_takan = type
     }
   },

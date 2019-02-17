@@ -8,8 +8,8 @@
     </div>
     <div class="zhans" ref="scrollView">
       <div class="routerViewClass" :style="clientWidth">
-        <Personality class="_personality"/>
-        <Anchor class="_anchor"/>
+        <Personality/>       <!-- 个性推荐 -->
+        <Anchor/>            <!-- 主播电台 -->
       </div>
     </div>
   </div>
@@ -93,15 +93,6 @@ export default {
 }
 </script>
 <style scoped>
-/* neo */
-._personality{
-  width: 100%;
-  height: 100%;
-}
-._anchor{
-  width: 100%;
-  height: 100%;
-}
 .navg {
   width:6rem;
   margin: .3rem auto;
@@ -139,8 +130,5 @@ export default {
 .routerViewClass{
   height: 100%;
   display: flex;
-}
-#homePageTouch{
-    height:12500px;
 }
 </style>

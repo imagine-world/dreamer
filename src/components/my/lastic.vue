@@ -1,22 +1,24 @@
 <template>
   <div>
-    <div class="mask" v-show="$store.state.is_takan" @click="tankuan()"></div>
-    <div class="tnakuan" v-show="$store.state.is_takan">弹框内容2</div>
+    <div class="mask" v-show="is_takan" @click="tankuan()"></div>
+    <transition name="slide-fade">
+    <div class="tnakuan" v-show="is_takan">弹框内容2</div>
+    </transition>
     <!-- 弹框 -->
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
 export default {
-  // props: ['is_takan'],
   data () {
     return {}
   },
   computed: {
+    ...mapState(['is_takan'])
   },
   methods: {
     tankuan () {
       this.$store.commit('CONTROL_PLAYLIST', false)
-      // this.is_takan = false
     }
   }
 }
@@ -43,5 +45,16 @@ export default {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   transition: all 10s;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s;
+}
+.slide-fade-enter, .slide-fade-leave-to
+ {
+  transform: translatey(150px);
+  opacity: 0;
 }
 </style>

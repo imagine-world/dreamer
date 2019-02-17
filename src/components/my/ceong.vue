@@ -8,7 +8,7 @@
       <div class="lecting-left">
         <div class="lecting-left-texr">我创建的歌单 (2)</div>
       </div>
-      <div @click.stop="dianz" class="diandain">
+      <div class="diandain"  @click.stop="dianz" >
         <img :src="imhza" class="ihjya">
       </div>
     </div>
@@ -26,7 +26,6 @@ export default {
   },
   data () {
     return {
-      // is_takan: false,
       is_show: false,
       is_imgs: true,
       imhza: require('../../assets/img/3a8c5dee3ece4c3a01a67d5c5ade110az.png'),
@@ -41,11 +40,8 @@ export default {
     },
     dianz () {
       this.$store.commit('CONTROL_PLAYLIST', !this.$store.state.is_takan)
-      // this.is_takan = !this.is_takan
-    },
-    tankzas () {
-      this.is_takan = false
     }
+
   }
 }
 </script>

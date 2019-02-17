@@ -13,7 +13,7 @@
       </div>
     </div>
     <songlist v-show="is_show" />
-    <Elastic :is_takan='is_takan' v-show="is_takan" v-on:childClick="chileEvent($event)"/>      <!-- 弹框组件 -->
+    <Elastic :is_takan='is_takan' v-show="is_takan" @childClick="chileEvent($event)"/>      <!-- 弹框组件 -->
   </div>
 </template>
 <script>
