@@ -18,6 +18,18 @@
    <div class="Latemusic">
      <Latemusic/> <!-- 最新音乐 -->
     </div>
+    <div class="bag"></div>
+    <div class="rastation">
+     <rastation/> <!-- 主播电台 -->
+    </div>
+    <div class="bag"></div>
+    <div class="Member">
+     <Member/> <!-- 会员中心 -->
+    </div>
+    <div class="bag"></div>
+    <div class="eleasevideo">
+     <eleasevideo/> <!-- 发布视频 -->
+    </div>
   </div>
 </template>
 <script>
@@ -26,13 +38,19 @@ import optionlist from '../../components/friend/optionlist.vue'
 import tuijiange from '../../components/friend/tuijiange.vue'
 import Livecast from '../../components/friend/Livecast.vue'
 import Latemusic from '../../components/friend/Latemusic.vue'
+import rastation from '../../components/friend/rastation.vue'
+import Member from '../../components/friend/Member.vue'
+import eleasevideo from '../../components/friend/eleasevideo.vue'
 export default {
   components: {
     Rotation,
     optionlist,
     tuijiange,
     Livecast,
-    Latemusic
+    Latemusic,
+    rastation,
+    Member,
+    eleasevideo
   }
 }
 </script>
@@ -42,23 +60,14 @@ export default {
   height: 14.6rem;
   overflow: scroll;
 }
-.lunbo {
-  width: 10.75rem;
-}
-.optionlist{
-  width: 10.75rem;
-}
-.tuijiange{
-  width: 10.4rem;
-}
-.Livecast{
-  width: 10.3rem;
-}
 .bag{
   background: #f4f4f4;
   height: .1rem;
 }
-.Latemusic{
-    width: 10.3rem;
+.lunbo{
+  width: 10.5rem;
+}
+.optionlist{
+  width: 10.5rem;
 }
 </style>
