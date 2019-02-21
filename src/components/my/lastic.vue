@@ -54,7 +54,7 @@ export default {
 }
 .slide-fade-enter, .slide-fade-leave-to
  {
-  transform: translatey(150px);
+  transform: translatey(200px);
   opacity: 0;
 }
 </style>
