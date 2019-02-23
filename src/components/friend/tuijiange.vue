@@ -105,7 +105,6 @@ export default {
 .item-texts {
   margin-top: 0.1rem;
   font-size: 0.4rem;
-  overflow:hidden;
  overflow: hidden;
  text-overflow: ellipsis;
  display: -webkit-box;
